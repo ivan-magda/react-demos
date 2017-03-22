@@ -10,15 +10,15 @@ const CardSection = (props) => {
 };
 
 const styles = {
-  container: {
-    borderBottomWidth: 1,
-    padding: 5,
-    backgroundColor: '#fff',
-    justifyContent: 'flex-start',
-    flexDirection: 'row',
-    borderColor: '#ddd',
-    position: 'relative'
-  }
+    container: {
+        borderBottomWidth: 1,
+        padding: 5,
+        backgroundColor: '#fff',
+        justifyContent: 'flex-start',
+        flexDirection: 'row',
+        borderColor: '#ddd',
+        position: 'relative'
+    }
 };
 
 export { CardSection };
