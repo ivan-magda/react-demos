@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 import firebase from 'firebase';
 
 import reducers from  './reducers';
+import LoginForm from './components/LoginForm';
 
 export default class App extends Component {
     componentWillMount() {
@@ -17,12 +18,11 @@ export default class App extends Component {
             messagingSenderId: "716119981017"
         });
     }
+
     render() {
         return (
             <Provider store={createStore(reducers)}>
-                <View style={{ flex: 1 }}>
-                    <Text>Hello World !!!</Text>
-                </View>
+                <LoginForm />
             </Provider>
         );
     }
