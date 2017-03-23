@@ -8,7 +8,7 @@ const initialState = {
 export default (state = initialState, action) => {
     switch (action.type) {
         case EMAIL_CHANGED:
-            return '';
+            return { ...state, email: action.payload };
         default:
             return state;
     }
