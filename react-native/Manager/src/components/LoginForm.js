@@ -34,7 +34,7 @@ class LoginForm extends Component {
     }
 
     render() {
-        const { email, password, error, loading } = this.props;
+        const { email, password, error } = this.props;
 
         return (
             <Card>
@@ -77,6 +77,7 @@ const styles = {
     }
 };
 
+// state.auth.*
 const mapStateToProps = ({ auth }) => {
     const { email, password, error, loading } = auth;
     return { email, password, error, loading };
