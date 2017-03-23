@@ -13,7 +13,7 @@ export default RouterComponent = () => {
                 <Scene key="login" component={LoginForm} title="Login" />
             </Scene>
 
-            <Scene key="main">
+            <Scene key="main" initial>
                 <Scene
                     key="employeeList"
                     component={EmployeeList}
