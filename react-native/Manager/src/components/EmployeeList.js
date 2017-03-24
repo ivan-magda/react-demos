@@ -1,10 +1,11 @@
 
 import React, { Component } from 'react';
-import { View, Text, ListView } from 'react-native';
+import { ListView } from 'react-native';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
 import { employeesFetch } from '../actions';
+import ListItem from './ListItem';
 
 class EmployeeList extends Component {
     componentWillMount() {
@@ -13,7 +14,6 @@ class EmployeeList extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
-        // nextProps are the next set of props.
         this.createDataSource(nextProps);
     }
 
@@ -22,12 +22,18 @@ class EmployeeList extends Component {
         this.dataSource = ds.cloneWithRows(employees);
     }
 
+    _renderRow(employee) {
+        return <ListItem employee={employee} />
+    }
+
     render() {
         console.log(this.props);
         return (
-            <View>
-
-            </View>
+            <ListView
+                enableEmptySections
+                dataSource={this.dataSource}
+                renderRow={this._renderRow}
+            />
         );
     }
 }
