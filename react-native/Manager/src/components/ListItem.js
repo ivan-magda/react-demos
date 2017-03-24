@@ -8,7 +8,7 @@ import { CardSection } from './common';
 export default class ListItem extends Component {
     _onRowPress() {
         const { employee } = this.props;
-        Actions.employeeCreate({ employee });
+        Actions.employeeEdit({ employee });
     }
 
     render() {
