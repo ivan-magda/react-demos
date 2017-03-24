@@ -1,18 +1,29 @@
 
 import React, { Component } from 'react';
-import { Text } from 'react-native'
+import { Text, TouchableWithoutFeedback, View } from 'react-native'
+import { Actions } from 'react-native-router-flux';
+
 import { CardSection } from './common';
 
 export default class ListItem extends Component {
+    _onRowPress() {
+        const { employee } = this.props;
+        Actions.employeeCreate({ employee });
+    }
+
     render() {
         const { name } = this.props.employee;
 
         return (
-            <CardSection>
-                <Text style={styles.titleStyle}>
-                    {name}
-                </Text>
-            </CardSection>
+            <TouchableWithoutFeedback onPress={this._onRowPress.bind(this)}>
+                <View>
+                    <CardSection>
+                        <Text style={styles.titleStyle}>
+                            {name}
+                        </Text>
+                    </CardSection>
+                </View>
+            </TouchableWithoutFeedback>
         );
     }
 }
